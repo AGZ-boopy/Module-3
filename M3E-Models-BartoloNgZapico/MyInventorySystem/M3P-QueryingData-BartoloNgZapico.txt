@@ -33,3 +33,21 @@
 
 # all WaterBottles with a cost that is NOT 3000 and has a wide mouth
 [P: ProjectFile] [S:ZAPICOAndrew] WaterBottle.objects.exclude(cost=3000.00).filter(mouth_size='Wide Mouth')
+
+# all suppliers whose names start with "M"
+[P: NGGide] [S:]
+
+# count the total number of WaterBottles in the database
+[P: NGGide] [S:]
+
+# get the 3 most expensive WaterBottles
+[P: NGGide] [S:]
+
+# all WaterBottles that are "18 Oz" size
+[P: NGGide] [S:]
+
+# all WaterBottles sorted by brand, then by cost (cheapest first)
+[P: NGGide] [S:]
+
+# all SunniesFlask WaterBottles, sort them from cheapest to most expensive
+[P: NGGide] [S:]
