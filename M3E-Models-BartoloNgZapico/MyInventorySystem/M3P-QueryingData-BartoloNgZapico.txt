@@ -1,10 +1,10 @@
 # all WaterBottles
-WaterBottle.objects.all()
+[P: ProjectFile] [S:ZAPICOAndrew] WaterBottle.objects.all()
 
 # all Suppliers sorted by country, alphabetically
 Supplier.objects.all().order_by('country')
 
-# all WaterBottles sorted by brand, alphabetically
+# all WaterBottles sorted by brand, alphabetically 
 
 # all black WaterBottles
 
