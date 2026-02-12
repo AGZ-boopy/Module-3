@@ -26,5 +26,3 @@ class WaterBottle(models.Model):
     def __str__(self):
         return f'SKU: {self.sku}, {self.brand}, {self.mouth_size}, {self.size}, {self.color}, supplied by {self.supplied_by.getName()}, {self.cost} : {self.current_quantity}'
     
-    def hotdog(self):
-        return self
