@@ -1,0 +1,24 @@
+# all WaterBottles
+WaterBottle.objects.all()
+
+# all Suppliers sorted by country, alphabetically
+
+# all WaterBottles sorted by brand, alphabetically
+
+# all black WaterBottles
+
+# all white HydroFlask WaterBottles
+
+# all WaterBottles supplied by Sailfish Inc
+
+# all blue WaterBottles supplied by Bucky Inc
+
+# only the name of the supplier from Germany
+
+# all WaterBottles that cost 3000 or higher
+
+# all WaterBottles supplied by EITHER Bucky Inc or Meister Inc
+
+# all WaterBottles that have Oz as the unit of its size, sorted by cost from most expensive to least expensive
+
+# all WaterBottles with a cost that is NOT 3000 and has a wide mouth
