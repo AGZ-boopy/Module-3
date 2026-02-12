@@ -5,12 +5,13 @@
 [P: ProjectFile] [S:NGGide] Supplier.objects.all().order_by('country')
 
 # all WaterBottles sorted by brand, alphabetically
+[P: ProjectFile] [S:BARTOLOMarco] WaterBottle.objects.all().order_by('brand')
 
 # all black WaterBottles
-WaterBottle.objects.filter(color__contains='Black')
+[P: ProjectFile] [S:BARTOLOMarco] WaterBottle.objects.filter(color__contains='Black')
 
 # all white HydroFlask WaterBottles
-WaterBottle.objects.filter(color__contains='White', brand__contains='Hydro Flask')
+[P: ProjectFile] [S:BARTOLOMarco] WaterBottle.objects.filter(color__contains='White', brand__contains='Hydro Flask')
 
 # all WaterBottles supplied by Sailfish Inc
 
