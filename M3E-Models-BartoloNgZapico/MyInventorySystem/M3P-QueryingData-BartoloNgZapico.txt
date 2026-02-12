@@ -5,6 +5,7 @@
 Supplier.objects.all().order_by('country')
 
 # all WaterBottles sorted by brand, alphabetically
+WaterBottle.objects.all().order_by('brand')
 
 # all black WaterBottles
 WaterBottle.objects.filter(color__contains='Black')
