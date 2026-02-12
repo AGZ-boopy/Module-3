@@ -16,6 +16,7 @@ WaterBottle.objects.filter(color__contains='White', brand__contains='Hydro Flask
 # all WaterBottles supplied by Sailfish Inc
 
 # all blue WaterBottles supplied by Bucky Inc
+[P: ProjectFile] [S:NGGide] WaterBottle.objects.filter(color='Blue', supplied_by__name='Bucky Inc')
 
 # only the name of the supplier from Germany
 
