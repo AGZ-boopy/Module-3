@@ -2,6 +2,7 @@
 WaterBottle.objects.all()
 
 # all Suppliers sorted by country, alphabetically
+Supplier.objects.all().order_by('country')
 
 # all WaterBottles sorted by brand, alphabetically
 
