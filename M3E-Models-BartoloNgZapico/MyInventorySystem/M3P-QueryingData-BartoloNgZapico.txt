@@ -20,8 +20,10 @@
 [P: ProjectFile] [S:NGGide] WaterBottle.objects.filter(color='Blue', supplied_by__name='Bucky Inc')
 
 # only the name of the supplier from Germany
+[P: ProjectFile] [S:NGGide] Supplier.objects.filter(country='Germany').values('name')
 
 # all WaterBottles that cost 3000 or higher
+[P: ProjectFile] [S:NGGide] WaterBottle.objects.filter(cost__gte=3000)
 
 # all WaterBottles supplied by EITHER Bucky Inc or Meister Inc
 [P: ProjectFile] [S:ZAPICOAndrew] WaterBottle.objects.filter(supplied_by__name__in=['Bucky, Inc.', 'Meister, Inc.'])
