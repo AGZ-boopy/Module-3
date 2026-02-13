@@ -8,13 +8,13 @@
 [P: ProjectFile] [S:BARTOLOMarco] WaterBottle.objects.all().order_by('brand')
 
 # all black WaterBottles
-[P: ProjectFile] [S:BARTOLOMarco] WaterBottle.objects.filter(color__contains='Black')
+[P: ProjectFile] [S:BARTOLOMarco] WaterBottle.objects.filter(color__icontains='Black')
 
 # all white HydroFlask WaterBottles
-[P: ProjectFile] [S:BARTOLOMarco] WaterBottle.objects.filter(color__contains='White', brand__contains='Hydro Flask')
+[P: ProjectFile] [S:BARTOLOMarco] WaterBottle.objects.filter(color__icontains='White', brand__icontains='Hydro Flask')
 
 # all WaterBottles supplied by Sailfish Inc
-[P: ProjectFile] [S:BARTOLOMarco] WaterBottle.objects.filter(supplied_byname='Sailfish Inc')
+[P: ProjectFile] [S:BARTOLOMarco] WaterBottle.objects.filter(supplied_by__name='Sailfish Inc')
 
 # all blue WaterBottles supplied by Bucky Inc
 [P: ProjectFile] [S:NGGide] WaterBottle.objects.filter(color='Blue', supplied_by__name='Bucky Inc')
@@ -23,13 +23,13 @@
 [P: ProjectFile] [S:NGGide] Supplier.objects.filter(country='Germany').values('name')
 
 # all WaterBottles that cost 3000 or higher
-[P: ProjectFile] [S:NGGide] WaterBottle.objects.filter(costgte=3000)
+[P: ProjectFile] [S:NGGide] WaterBottle.objects.filter(cost__gte=3000)
 
 # all WaterBottles supplied by EITHER Bucky Inc or Meister Inc
 [P: ProjectFile] [S:ZAPICOAndrew] WaterBottle.objects.filter(supplied_by__name__in=['Bucky, Inc.', 'Meister, Inc.'])
 
 # all WaterBottles that have Oz as the unit of its size, sorted by cost from most expensive to least expensive
-[P: ProjectFile] [S:ZAPICOAndrew] WaterBottle.objects.filter(size__contains='Oz').order_by('-cost')
+[P: ProjectFile] [S:ZAPICOAndrew] WaterBottle.objects.filter(size__icontains='Oz').order_by('-cost')
 
 # all WaterBottles with a cost that is NOT 3000 and has a wide mouth
 [P: ProjectFile] [S:ZAPICOAndrew] WaterBottle.objects.exclude(cost=3000.00).filter(mouth_size='Wide Mouth')
@@ -77,10 +77,10 @@
 [P: BARTOLOMarco] [S:ZAPICOAndrew] WaterBottle.objects.filter(cost__lt=2000)
 
 # all WaterBottles that have "Liter" as the size
-[P: BARTOLOMarco] [S:ZAPICOAndrew] WaterBottle.objects.filter(size__contains='Liter')
+[P: BARTOLOMarco] [S:ZAPICOAndrew] WaterBottle.objects.filter(size__icontains='Liter')
 
-# all Suppliers located in places outside of Earth (Terra)
-[P: BARTOLOMarco] [S:NGGide] Supplier.objects.filter(country__icontains='Terra')
+# all Suppliers located in places outside of Earth
+[P: BARTOLOMarco] [S:NGGide] Supplier.objects.exclude(country='Earth')
 
 # all Suppliers located in Manila
 [P: BARTOLOMarco] [S:NGGide] Supplier.objects.filter(city='Manila')
