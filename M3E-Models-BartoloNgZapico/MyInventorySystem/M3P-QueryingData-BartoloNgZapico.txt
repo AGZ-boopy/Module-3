@@ -79,8 +79,8 @@
 # all WaterBottles that have "Liter" as the size
 [P: BARTOLOMarco] [S:ZAPICOAndrew] WaterBottle.objects.filter(size__icontains='Liter')
 
-# all Suppliers located in places outside of Earth
-[P: BARTOLOMarco] [S:NGGide] Supplier.objects.exclude(country='Earth')
+# all Suppliers located in Terra
+[P: BARTOLOMarco] [S:NGGide] Supplier.objects.filter(country__icontains='Terra')
 
 # all Suppliers located in Manila
 [P: BARTOLOMarco] [S:NGGide] Supplier.objects.filter(city='Manila')
