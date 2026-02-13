@@ -35,13 +35,13 @@
 [P: ProjectFile] [S:ZAPICOAndrew] WaterBottle.objects.exclude(cost=3000.00).filter(mouth_size='Wide Mouth')
 
 # All WaterBottles produced by supplier located in the Philippines
-[P: ZAPICOAndrew] [S:BARTOLOMarco]
+[P: ZAPICOAndrew] [S:BARTOLOMarco] WaterBottle.objects.filter(supplied_by__country='Philippines')
 
 # all WaterBottles supplied by Endfield Inc
-[P: ZAPICOAndrew] [S:BARTOLOMarco]
+[P: ZAPICOAndrew] [S:BARTOLOMarco] WaterBottle.objects.filter(supplied_by__name='Endfield, Inc.')
 
 # All WaterBottles that are either Red or Orange
-[P: ZAPICOAndrew] [S:BARTOLOMarco]
+[P: ZAPICOAndrew] [S:BARTOLOMarco] WaterBottle.objects.filter(color__in=['Red', 'Orange'])
 
 # All Suppliers located in Asia (Philippines or Thailand)
 [P: ZAPICOAndrew] [S:NGGide] Supplier.objects.filter(country__in=['Philippines', 'Thailand'])
@@ -53,13 +53,13 @@
 [P: ZAPICOAndrew] [S:NGGide] WaterBottle.objects.filter(size__icontains='Liter').exclude(size='1 Liter')
 
 # all suppliers whose names start with "M"
-[P: NGGide] [S:BARTOLOMarco]
+[P: NGGide] [S:BARTOLOMarco] Supplier.objects.filter(name__startswith='M')
 
 # count the total number of WaterBottles in the database
-[P: NGGide] [S:BARTOLOMarco]
+[P: NGGide] [S:BARTOLOMarco] WaterBottle.objects.count()
 
 # get the 3 most expensive WaterBottles
-[P: NGGide] [S:BARTOLOMarco]
+[P: NGGide] [S:BARTOLOMarco] WaterBottle.objects.order_by('-cost')[:3]
 
 # all WaterBottles that are "18 Oz" size
 [P: NGGide] [S:ZAPICOAndrew] WaterBottle.objects.filter(size='18 Oz')
